@@ -29,7 +29,7 @@ namespace API.Controllers
             
             
             if(await UserExists(registerDto.userName)) return BadRequest("Username is taken!");
-
+            
             
             using var hmac = new HMACSHA512();
 
