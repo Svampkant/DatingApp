@@ -9,6 +9,7 @@ import { AccountService } from '../_services/account.service';
 })
 export class HomeComponent implements OnInit {
   registerMode = false;
+  isLoggedIn: any;
 
 
   constructor(public accountService: AccountService) { }
