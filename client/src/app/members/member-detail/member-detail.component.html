@@ -33,8 +33,10 @@
         <tabset class="member-tabset">
             <tab heading="About {{member.knownAs}}">
                 <h4>Description</h4>
+                <p *ngIf="!member.introduction">The user hasn't created an introduction yet!</p>
                 <p>{{member.introduction}}</p>
                 <h4>Looking for</h4>
+                <p *ngIf="!member.lookingFor">{{member.username}} hasn't specified this yet.</p>
                 <p>{{member.lookingFor}}</p>
             </tab>
             <tab heading="Interests">
