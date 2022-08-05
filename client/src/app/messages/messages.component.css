@@ -1,0 +1,11 @@
+.img-circle {
+    max-height: 50px;
+}
+
+td {
+    max-width: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 5px;
+    text-overflow: ellipsis;
+}
