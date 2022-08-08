@@ -20,6 +20,10 @@
     max-height: 50px;
     padding: 5px;
 }
+
+.rounded-circle:hover{
+    display:block;
+}
 .text-break {
     word-wrap: break-word;
     word-break: break-all;
