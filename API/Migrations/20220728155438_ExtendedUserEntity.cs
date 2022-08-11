@@ -15,7 +15,7 @@ namespace API.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    userName = table.Column<string>(type: "TEXT", nullable: true),
+                    username = table.Column<string>(type: "TEXT", nullable: true),
                     PasswordHash = table.Column<byte[]>(type: "BLOB", nullable: true),
                     PasswordSalt = table.Column<byte[]>(type: "BLOB", nullable: true),
                     DateOfBirth = table.Column<DateTime>(type: "TEXT", nullable: false),

@@ -12,7 +12,9 @@ export class HomeComponent implements OnInit {
   isLoggedIn: any;
 
 
-  constructor(public accountService: AccountService) { }
+  constructor(public accountService: AccountService) { 
+    
+  }
 
   ngOnInit(): void {
    

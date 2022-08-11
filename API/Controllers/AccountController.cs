@@ -36,11 +36,11 @@ namespace API.Controllers
         {
 
 
-            if (await UserExists(registerDto.userName)) return BadRequest("Username is taken!");
+            if (await UserExists(registerDto.username)) return BadRequest("Username is taken!");
 
             var user = _mapper.Map<AppUser>(registerDto);
 
-            user.UserName = registerDto.userName.ToLower();
+            user.UserName = registerDto.username.ToLower();
     
             var result = await _userManager.CreateAsync(user, registerDto.Password);
 
@@ -52,7 +52,7 @@ namespace API.Controllers
 
             return new UserDto
             {
-                userName = user.UserName,
+                username = user.UserName,
                 Token = await _tokenService.CreateToken(user),
                 KnownAs = user.KnownAs,
                 Gender = user.Gender
@@ -63,7 +63,7 @@ namespace API.Controllers
         {
             var user = await _userManager.Users
                 .Include(p => p.Photos)
-                .SingleOrDefaultAsync(x => x.UserName == loginDto.userName.ToLower());
+                .SingleOrDefaultAsync(x => x.UserName == loginDto.username.ToLower());
 
 
             if (user == null) return Unauthorized("Invalid username");
@@ -74,7 +74,7 @@ namespace API.Controllers
 
             return new UserDto
             {
-                userName = user.UserName,
+                username = user.UserName,
                 Token = await _tokenService.CreateToken(user),
                 PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url,
                 KnownAs = user.KnownAs,

@@ -42,7 +42,7 @@ namespace API.Migrations
                 newName: "AspNetUsers");
 
             migrationBuilder.RenameColumn(
-                name: "userName",
+                name: "username",
                 table: "AspNetUsers",
                 newName: "UserName");
 
@@ -446,7 +446,7 @@ namespace API.Migrations
             migrationBuilder.RenameColumn(
                 name: "UserName",
                 table: "Users",
-                newName: "userName");
+                newName: "username");
 
             migrationBuilder.AlterColumn<byte[]>(
                 name: "PasswordHash",
